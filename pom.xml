@@ -10,8 +10,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jackson.version>2.14.0</jackson.version>
     <slf4j.version>2.0.3</slf4j.version>
+    <jackson.version>2.17.1</jackson.version>
     <moshi.version>1.14.0</moshi.version>
   </properties>
 
@@ -20,30 +20,25 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.10.1</version>
+        <version>3.13.0</version>
         <configuration>
-          <release>20</release>
-          <compilerArgs>
-            <compilerArg>--enable-preview</compilerArg>
-          </compilerArgs>
+          <release>22</release>
         </configuration>
       </plugin>
 
       <plugin>
         <groupId>com.google.cloud.tools</groupId>
         <artifactId>jib-maven-plugin</artifactId>
-        <version>3.3.1</version>
+        <version>3.4.3</version>
         <configuration>
           <from>
-            <image>eclipse-temurin:20</image>
+            <image>eclipse-temurin:22</image>
           </from>
           <to>
             <image>i-al-istannen/doctor</image>
           </to>
           <container>
-            <jvmFlags>
-              <jvmFlag>--enable-preview</jvmFlag>
-            </jvmFlags>
+            <mainClass>de.ialistannen.doctor.DocTor</mainClass>
           </container>
         </configuration>
       </plugin>
@@ -51,7 +46,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
-        <version>3.3.0</version>
+        <version>3.6.0</version>
         <executions>
           <execution>
             <id>shade</id>
@@ -93,7 +88,7 @@
     <dependency>
       <groupId>net.dv8tion</groupId>
       <artifactId>JDA</artifactId>
-      <version>5.0.0-beta.3</version>
+      <version>5.0.0-beta.24</version>
     </dependency>
 
     <dependency>
@@ -116,13 +111,13 @@
     <dependency>
       <groupId>com.github.ben-manes.caffeine</groupId>
       <artifactId>caffeine</artifactId>
-      <version>3.1.1</version>
+      <version>3.1.8</version>
     </dependency>
 
     <dependency>
       <groupId>com.github.I-Al-Istannen</groupId>
       <artifactId>JavadocIndexer</artifactId>
-      <version>8f39b2e9f8</version>
+      <version>737637adb06f</version>
     </dependency>
 
   </dependencies>
